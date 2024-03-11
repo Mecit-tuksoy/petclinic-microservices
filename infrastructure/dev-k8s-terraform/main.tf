@@ -153,7 +153,7 @@ resource "aws_iam_instance_profile" "petclinic-master-server-profile" {
 }
 
 resource "aws_instance" "kube-master" {
-    ami = "mi-0f403e3180720dd7e"
+    ami = "ami-0f403e3180720dd7e"
     instance_type = "t2.micro"
     iam_instance_profile = aws_iam_instance_profile.petclinic-master-server-profile.name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-master-sg.id, aws_security_group.petclinic-mutual-sg.id]
@@ -170,7 +170,7 @@ resource "aws_instance" "kube-master" {
 }
 
 resource "aws_instance" "worker-1" {
-    ami = "mi-0f403e3180720dd7e"
+    ami = "ami-0f403e3180720dd7e"
     instance_type = "t2.micro"
     vpc_security_group_ids = [aws_security_group.petclinic-kube-worker-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
@@ -186,7 +186,7 @@ resource "aws_instance" "worker-1" {
 }
 
 resource "aws_instance" "worker-2" {
-    ami = "mi-0f403e3180720dd7e"
+    ami = "ami-0f403e3180720dd7e"
     instance_type = "t2.micro"
     vpc_security_group_ids = [aws_security_group.petclinic-kube-worker-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
